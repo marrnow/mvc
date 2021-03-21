@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<body>
+    <div class='table_all'>
+        <h1>MVC ข้อ 2</h1>
+        
+        <table = 'table1'>
+            <tr>
+                <th>Runner ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Km</th>
+                <th>Trophy</th>
+            </tr>
+            {%for runner in runner_querys%}
+            <tr>
+                <td>{{runner.ID}}</td>
+                <td>{{runner.Firstname}}</td>
+                <td>{{runner.Lastname}}</td>
+                <td>{{runner.Age}}</td>
+                <td>{{runner.Km}}</td>
+                <td>{{runner.Trophy}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+
+        <form method="POST">
+            <h1>Register</h1>
+            <tr>
+                <td>Firstname :</td>
+                <td><input type="text" name="fname"></td>
+            </tr>
+            <tr>
+                <td>Lastname :</td>
+                <td><input type="text" name="lname"></td>
+            </tr>
+            <tr>
+                <td>Age :</td>
+                <td><input type="text" name="age"></td>
+            </tr>
+            <button type="submit">Register</button>
+        </form>
+
+        <form action = "/kilo" method="POST">
+            <h1>Insert Km(less than 10 Km only otherwise it will not count)</h1>
+            <tr>
+                <td>Your ID :</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>Km :</td>
+                <td><input type="text" name="km"></td>
+            </tr>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action = "/top" method="POST">
+            <h1>See top 10</h1>
+            
+            <button type="submit">Top 10</button>
+        </form>
+
+    </div>
+</body>
+</head>
